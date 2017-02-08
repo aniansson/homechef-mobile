@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'homechef.controllers' is found in controllers.js
-angular.module('homechef', ['ionic', 'homechef.controllers', 'angularPayments'])
+angular.module('homechef', ['ionic', 'homechef.controllers', 'angularPayments', 'ngResource'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
