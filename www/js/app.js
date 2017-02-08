@@ -5,6 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'homechef.controllers' is found in controllers.js
 angular.module('homechef', ['ionic', 'homechef.controllers'])
+  .constant('API_URL', 'https://homechefs.herokuapp.com/api/v1')
 
   .run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {
