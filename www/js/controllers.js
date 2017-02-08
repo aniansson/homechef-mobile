@@ -56,5 +56,11 @@ angular.module('homechef.controllers', [])
 })
 
 .controller('StripeCtrl', function($scope, $stateParams) {
-  $scope.message='hello'
+  $scope.stripeCallback = function (code, result) {
+    if (result.error) {
+        window.alert('it failed! error: ' + result.error.message);
+    } else {
+        console.log(result);
+    }
+  };
 });
