@@ -53,4 +53,8 @@ angular.module('homechef.controllers', [])
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
+})
+
+.controller('StripeCtrl', function($scope, $stateParams) {
+  $scope.message='hello'
 });

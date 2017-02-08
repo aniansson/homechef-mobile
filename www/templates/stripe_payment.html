@@ -1,0 +1,11 @@
+<ion-content>
+{{ message }}
+
+<form stripe-form="stripeCallback">
+    <input ng-model="number" placeholder="Card Number" />
+    <input ng-model="expiry" placeholder="Expiration" />
+    <input ng-model="cvc" placeholder="CVC" />
+    <button type="submit">Submit</button>
+</form>
+
+</ion-content>

@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'homechef.controllers' is found in controllers.js
-angular.module('homechef', ['ionic', 'homechef.controllers'])
+angular.module('homechef', ['ionic', 'homechef.controllers', 'angularPayments'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -21,6 +21,10 @@ angular.module('homechef', ['ionic', 'homechef.controllers'])
     }
   });
 })
+
+  .config(function() {
+    window.Stripe.setPublishableKey('pk_test_zwRGTjpna9y7M4qoIOi6qL31');
+  })
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
@@ -39,6 +43,12 @@ angular.module('homechef', ['ionic', 'homechef.controllers'])
           templateUrl: 'templates/about/about.html'
         }
       }
+  })
+
+  .state('payment', {
+      url: '/payment',
+      templateUrl: 'templates/stripe_payment.html',
+      controller: 'StripeCtrl'
   });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/about');
