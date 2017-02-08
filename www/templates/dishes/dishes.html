@@ -2,21 +2,23 @@
   <ion-content>
     <div class="row">
       <div class="col">
-        <div class="card">
-          <div class="item item-divider">
-            Pizza
-          </div>
-          <div class="item item-text-wrap">
-            <div class="image">
-              <img src="http://lorempixel.com/400/140/food"/>
+        <div ng-if="dishCollection" ng-repeat="entry in dishCollection">
+          <div class="card">
+            <div class="item item-divider">
+              {{entry.name}}
             </div>
-            <p>Description: Delicous food</p>
-            <p>Ready for pick-up at 18:00 </p>
-            <p>Price: $9.00</p>
-            <p>10 portions left </p>
-            <button class="button button-full button-calm">
-              Add dish to order
-            </button>
+            <div class="item item-text-wrap">
+              <div class="image">
+                <img src="http://lorempixel.com/400/140/food"/>
+              </div>
+              <p>Description: {{entry.description}}</p>
+              <p>Ready for pick-up at {{entry.ready_time}} </p>
+              <p>Price: ${{entry.price}}</p>
+              <p>{{entry.portions}} portions left </p>
+              <button class="button button-full button-calm">
+                Add dish to order
+              </button>
+            </div>
           </div>
         </div>
       </div>
