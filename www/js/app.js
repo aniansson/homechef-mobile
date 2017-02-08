@@ -38,7 +38,7 @@ angular.module('homechef', ['ionic', 'homechef.controllers', 'homechef.services'
         views: {
           'menuContent': {
             templateUrl: 'templates/dishes/dishes.html',
-            controller: 'DisplayDishCtrl'
+            controller: 'dishesCtrl'
           }
         }
       })

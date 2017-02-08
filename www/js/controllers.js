@@ -42,25 +42,19 @@ angular.module('homechef.controllers', [])
   })
 
 
-  .controller('DishCtrl', function ($scope, dishes) {
-    console.log('hi');
-    $scope.retrieveDishes = function () {
-      console.log('finally');
+  .controller('dishesCtrl', function ($state, $scope, dishes, $ionicLoading, $ionicPopup) {
+    $scope.$on('$ionicView.enter', function () {
       $ionicLoading.show({
         template: 'Retrieving delicious food'
       });
-      dishes.query({}, function (response) {
-        $state.go('app.dishes', {dishCollection: response.entries});
+      dishes.query(function (response) {
+        $scope.dishCollection = response.entries;
         $ionicLoading.hide();
-      }, function (error) {
-        $ionicLoading.hide();
-        $scope.showAlert('Failure', error.statusText);
-      })
-    };
+      }, function (response) {
+        //error
+      });
+    })
   })
 
-  .controller('DisplayDishCtrl', function ($scope, $stateParams) {
-    $scope.$on('$ionicView.enter', function () {
-      $scope.dishCollection = $stateParams.dishCollection;
-    })
+  .controller('displayDishCtrl', function ($scope, $stateParams) {
   });
