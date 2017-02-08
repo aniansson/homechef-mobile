@@ -2,6 +2,9 @@
   <ion-content>
     <div class="row">
       <div class="col">
+        <div ng-if="!dishcollection">
+          Sorry there are no food available
+        </div>
         <div ng-if="dishCollection" ng-repeat="entry in dishCollection">
           <div class="card">
             <div class="item item-divider">
