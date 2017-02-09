@@ -18,10 +18,10 @@
     </ion-header-bar>
     <ion-content>
       <ion-list>
-        <ion-item menu-close ng-click="login()">
+        <ion-item menu-close ng-if="!currentUser" ng-click="login()">
           Login
         </ion-item>
-        <ion-item menu-close ng-click="signup()">
+        <ion-item menu-close ng-if="!currentUser" ng-click="signup()">
           Sign Up
         </ion-item>
         <ion-item menu-close href="#/app/dishes">

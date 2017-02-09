@@ -103,12 +103,13 @@ angular.module('homechef.controllers', [])
       $timeout(function() {
         $scope.closeLogin();
       }, 1000);
-  
+
     $rootScope.$on('auth:login-success', function(ev, user) {
       $scope.currentUser = angular.extend(user, $auth.retrieveData('auth_headers'));
     });
 
-    $rootScope.$on('auth:registering-success', function(ev, user) {
+    $rootScope.$on('auth:registration-email-success', function(ev, user) {
+      console.log("hi");
       $scope.currentUser = angular.extend(user, $auth.retrieveData('auth_headers'));
     });
   })
