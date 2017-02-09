@@ -31,8 +31,15 @@ angular.module('homechef.controllers', [])
 
   // Perform the login action when the user submits the login form
   $scope.doLogin = function() {
-    console.log('Doing login', $scope.loginData);
-
+    $auth.submitLogin($scope.loginData)
+    .then(function (resp) {
+      // handle success response
+      $scope.closeLogin();
+    })
+    .catch(function (error) {
+      // handle error response
+      $scope.errorMessage = error;
+    });
     // Simulate a login delay. Remove this and replace with your login
     // code if using a login system
     $timeout(function() {
