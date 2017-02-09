@@ -18,31 +18,31 @@ angular.module('homechef.controllers', [])
     $ionicModal.fromTemplateUrl('templates/login.html', {
       scope: $scope
     }).then(function (modal) {
-      $scope.loginmodal = modal;
+      $scope.loginModal = modal;
     });
 
     $ionicModal.fromTemplateUrl('templates/signup.html', {
       scope: $scope
     }).then(function (modal) {
-      $scope.signupmodal = modal;
+      $scope.signupModal = modal;
     });
 
     // Triggered in the login modal to close it
     $scope.closeLogin = function () {
-      $scope.loginmodal.hide();
+      $scope.loginModal.hide();
     };
 
     $scope.closeSignup = function () {
-      $scope.signupmodal.hide();
+      $scope.signupModal.hide();
     };
 
     // Open the login modal
     $scope.login = function () {
-      $scope.loginmodal.show();
+      $scope.loginModal.show();
     };
 
     $scope.signup = function () {
-      $scope.signupmodal.show();
+      $scope.signupModal.show();
     };
 
     $scope.doSignup = function () {
