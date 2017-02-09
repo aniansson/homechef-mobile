@@ -5,7 +5,13 @@
 // the 2nd parameter is an array of 'requires'
 // 'homechef.controllers' is found in controllers.js
 angular.module('homechef', ['ionic', 'homechef.controllers', 'homechef.services', 'ng-token-auth', 'ngResource'])
-  .constant('API_URL', 'https://homechefs.herokuapp.com//api/v1')
+  .constant('API_URL', 'https://homechefs.herokuapp.com/api/v1')
+
+  .config(function ($authProvider, API_URL) {
+    $authProvider.configure({
+      apiUrl: API_URL
+    });
+  })
 
   .run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {
@@ -23,13 +29,10 @@ angular.module('homechef', ['ionic', 'homechef.controllers', 'homechef.services'
     });
   })
 
-  .config(function ($stateProvider, $urlRouterProvider, $authProvider, API_URL) {
+  .config(function ($stateProvider, $urlRouterProvider) {
 
-    $authProvider.configure({
-      apiUrl: API_URL
-    });
 
-      $stateProvider
+    $stateProvider
 
       .state('app', {
         url: '/app',
