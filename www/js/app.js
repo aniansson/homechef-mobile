@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'homechef.controllers' is found in controllers.js
 angular.module('homechef', ['ionic', 'homechef.controllers', 'homechef.services', 'ng-token-auth', 'ngResource'])
-  .constant('API_URL', 'https://homechefs.herokuapp.com/api/v1')
+  .constant('API_URL', 'http://localhost:3000/api/v1')
 
   .config(function ($authProvider, API_URL) {
     $authProvider.configure({
