@@ -23,8 +23,13 @@ angular.module('homechef', ['ionic', 'homechef.controllers', 'homechef.services'
     });
   })
 
-  .config(function ($stateProvider, $urlRouterProvider) {
-    $stateProvider
+  .config(function ($stateProvider, $urlRouterProvider, $authProvider, API_URL) {
+
+    $authProvider.configure({
+      apiUrl: API_URL
+    });
+
+      $stateProvider
 
       .state('app', {
         url: '/app',
