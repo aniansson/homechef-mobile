@@ -107,7 +107,6 @@ angular.module('homechef.controllers', [])
     });
 
     $rootScope.$on('auth:registration-email-success', function (ev, user) {
-      console.log("hi");
       $scope.currentUser = angular.extend(user, $auth.retrieveData('auth_headers'));
     });
   })
