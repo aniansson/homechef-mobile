@@ -4,8 +4,14 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'homechef.controllers' is found in controllers.js
-angular.module('homechef', ['ionic', 'homechef.controllers', 'homechef.services', 'ngResource'])
-  .constant('API_URL', 'https://homechefs.herokuapp.com//api/v1')
+angular.module('homechef', ['ionic', 'homechef.controllers', 'homechef.services', 'ng-token-auth', 'ngResource'])
+  .constant('API_URL', 'https://homechefs.herokuapp.com/api/v1')
+
+  .config(function ($authProvider, API_URL) {
+    $authProvider.configure({
+      apiUrl: API_URL
+    });
+  })
 
   .run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {
@@ -24,6 +30,8 @@ angular.module('homechef', ['ionic', 'homechef.controllers', 'homechef.services'
   })
 
   .config(function ($stateProvider, $urlRouterProvider) {
+
+
     $stateProvider
 
       .state('app', {

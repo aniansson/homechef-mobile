@@ -1,6 +1,6 @@
 angular.module('homechef.services', [])
 
-.factory('dishes', function ($resource, API_URL) {
+.factory('dishService', function ($resource, API_URL) {
   return $resource(API_URL + '/dishes', {}, {
     query: {
       method: "GET",
