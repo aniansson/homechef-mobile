@@ -51,6 +51,16 @@ angular.module('homechef', ['ionic', 'homechef.controllers', 'homechef.services'
         }
       })
 
+      .state('app.checkout', {
+        url: '/dishes/checkout',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/checkout.html',
+            controller: 'checkoutCtrl'
+          }
+        }
+      })
+
       .state('app.about', {
         url: '/about',
         views: {
